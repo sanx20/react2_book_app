@@ -15,8 +15,8 @@ const Stack = createStackNavigator();
 const BookStack = () => (
   <Stack.Navigator
     screenOptions={{
-      headerStyle: { backgroundColor: '#121212' },
-      headerTintColor: '#FFD700',
+      headerStyle: { backgroundColor: '#004D40' },
+      headerTintColor: '#FFC107',
       headerTitleStyle: { fontWeight: 'bold' },
     }}
   >
@@ -31,9 +31,8 @@ export default function App() {
       <NavigationContainer>
         <Tab.Navigator
           screenOptions={{
-            headerShown: false,
             tabBarStyle: { backgroundColor: '#121212' },
-            tabBarActiveTintColor: '#FFD700',
+            tabBarActiveTintColor: '#FFC107',
             tabBarInactiveTintColor: '#888',
           }}
         >
@@ -41,6 +40,7 @@ export default function App() {
             name="Home"
             component={BookStack}
             options={{
+              headerShown: false,
               tabBarIcon: ({ color, size }) => <Ionicons name="list" size={size} color={color} />,
             }}
           />
@@ -48,7 +48,12 @@ export default function App() {
             name="Borrowed"
             component={BorrowedScreen}
             options={{
+              title: 'Borrowed Books',
               tabBarIcon: ({ color, size }) => <Ionicons name="book" size={size} color={color} />,
+              headerShown: true,
+              headerStyle: { backgroundColor: '#004D40' },
+              headerTintColor: '#FFC107',
+              headerTitleStyle: { fontWeight: 'bold' },
             }}
           />
         </Tab.Navigator>
